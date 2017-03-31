@@ -19,7 +19,88 @@
     </script>
   </head>
 
-  <body>
-    <app-root>Loading...</app-root>
+  <body data-spy="scroll" data-target=".scrollspy">
+      <header>
+          <nav class="nav navbar-default navbar-fixed-top">
+              <div class="container-fluid">
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" href="/index.html">Brand</a>
+                  </div>
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav navbar-right">
+                          <li><a href="/about.html">Tutorial</a>
+                          </li>
+                          <li><a href="/membership_details.html">Page</a>
+                          </li>
+                          <li><a href="/sign_up.html">Tips</a>
+                          </li>
+                          <li><a href="/log_in.html">Log Out</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <!-- /.navbar-collapse -->
+              </div>
+          </nav>
+      </header>
+
+
+        <section class="container">
+            <div class="row">
+                <div id="scroll-able" data-spy="scroll" data-target="#target_nav">
+                  <div class="mainintro">
+                    <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="5000" id="bs-carousel">
+                    <!-- Overlay -->
+                    <div class="overlay"></div>
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                      <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#bs-carousel" data-slide-to="1"></li>
+                      <li data-target="#bs-carousel" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                      <div class="item slides active">
+                        <div class="slide-1"></div>
+                        <div class="hero">
+                          <hgroup>
+                              <h1>You can be Fit</h1>
+                          </hgroup>
+                        </div>
+                      </div>
+                      <div class="item slides">
+                        <div class="slide-2"></div>
+                        <div class="hero">
+                          <hgroup>
+                              <h1>You can be Healthy</h1>
+                          </hgroup>
+                        </div>
+                      </div>
+                      <div class="item slides">
+                        <div class="slide-3"></div>
+                        <div class="hero">
+                          <hgroup>
+                              <h1>We Can help</h1>
+                          </hgroup>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+
+
+
+                    <app-root></app-root>
+                </div>
+            </div>
+          </section>
+
+
   </body>
 </html>

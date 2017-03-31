@@ -47,6 +47,9 @@ https://github.com/keelyzglenn/meal-tracker-project
 * Input: Edit Food
 * Output: Food edited!
 
+## Bootstrap Styling Sources:
+* http://bootsnipp.com/snippets/featured/responsive-bs-carousel-with-hero-headers
+
 ## Legal
 MIT License
 
