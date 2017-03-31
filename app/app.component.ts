@@ -30,7 +30,7 @@ masterFoodsList: Food[] = [
   new Food('Bagel', 'plain', 1,	150),
   new Food('Kelloggs Raisin Bran', 'cereal', 3/4,	120),
   new Food('Oatmeal', 'cooked', 1,	132),
-  new Food('Oreos', 'chocolate', 1, 50),
+  new Food('Oreos', 'chocolate', 15, 750),
   new Food('Wheat Thins', 'gross', 8, 70),
   new Food('Iced cinnamon roll', 'Pillsbury', 1, 110)
   ];
