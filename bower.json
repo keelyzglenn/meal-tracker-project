@@ -1,0 +1,17 @@
+{
+  "name": "meal-tracker",
+  "authors": [
+    "Keely Glenn <glenj392@newschool.edu>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
