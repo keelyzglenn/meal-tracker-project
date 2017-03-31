@@ -7,7 +7,7 @@ import { Food } from './food.model';
 
   <!--to view list-->
   <p *ngFor="let food of childFoodList" (click)='showFood(food)'>{{food.name}}
-  <button (click)='editFood(food)'>Edit</button>
+  <button (click)='editFoodClicked(food)'>Edit</button>
   </p>
 
   <!-- to show details of food -->
@@ -23,6 +23,11 @@ import { Food } from './food.model';
 
 export class FoodListComponent {
   @Input() childFoodList: Food[];
+  @Output() clickSender = new EventEmitter();
+
+  editFoodClicked(foodToEdit: Food) {
+    this.clickSender.emit(foodToEdit);
+  }
 
   // show details
     showFoodDetails = null;

@@ -7,24 +7,10 @@ import { Food } from './food.model';
   <h1>Food Tracker</h1>
   <h3>{{month}}/{{day}}/{{year}}</h3>
 
-  <food-list [childFoodList]="masterFoodsList"></food-list>
+  <food-list [childFoodList]="masterFoodsList" (clickSender)="editFood($event)"></food-list>
+  <edit-food [childSelectedFood]="selectedFood" (hideEditFormClickedSender)="hideEditForm()"></edit-food>
 
 
-  
-
-  <!-- to edit current foods -->
-    <div *ngIf="selectedFood">
-      <h3>Edit Food</h3>
-      <label>Name:</label>
-      <input [(ngModel)]="selectedFood.name">
-      <label>Details::</label>
-      <input [(ngModel)]="selectedFood.details">
-      <label>Servings:</label>
-      <input [(ngModel)]="selectedFood.servings">
-      <label>Calories:</label>
-      <input [(ngModel)]="selectedFood.calories">
-       <button (click)="hideEditForm()">Done</button>
-    </div>
 
   `
 })
