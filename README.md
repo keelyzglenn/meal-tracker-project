@@ -8,7 +8,11 @@ This app will track a users meals for the day, including name, details, and calo
 ## Setup and Installation
 
 * Clone repository
-* Run "npm install" and "bower install"
+* Run:
+  ** $ npm install
+  ** $ bower install
+  ** $ gulp build
+  ** $ gulp serve
 * Open index.html in browser of your choice
 
 
