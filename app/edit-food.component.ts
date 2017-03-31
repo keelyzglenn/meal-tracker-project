@@ -5,19 +5,44 @@ import { Food } from './food.model';
   selector: 'edit-food',
   template: `
   <!-- to edit current foods -->
-    <div *ngIf="childSelectedFood">
-      <h3>Edit Food</h3>
-      <label>Name:</label>
-      <input [(ngModel)]="childSelectedFood.name">
-      <label>Details::</label>
-      <input [(ngModel)]="childSelectedFood.details">
-      <label>Servings:</label>
-      <input [(ngModel)]="childSelectedFood.servings">
-      <label>Calories:</label>
-      <input [(ngModel)]="childSelectedFood.calories">
-       <button (click)="hideEditFormClicked()">Done</button>
-    </div>
+    <div class="row edit-foods">
+      <div class="col-md-4"></div>
+      <div *ngIf="childSelectedFood" class="form-horizontal new-food-form col-md-4">
+      <div class="form-group ">
 
+        <h3 class= "form-name">EDIT THIS SNACK</h3>
+      </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label">Name</label>
+          <div class="col-md-4">
+            <input class="form-control input-md" [(ngModel)]="childSelectedFood.name">
+          </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label">Details:</label>
+          <div class="col-md-4">
+            <input class="form-control input-md" [(ngModel)]="childSelectedFood.details">
+          </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label">Servings:</label>
+          <div class="col-md-4">
+            <input class="form-control input-md" [(ngModel)]="childSelectedFood.servings">
+          </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label">Calories:</label>
+          <div class="col-md-4">
+            <input class="form-control input-md" [(ngModel)]="childSelectedFood.calories">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-4"></div>
+          <button class="col-md-4 btn btn-primary" (click)="hideEditFormClicked()">Done</button>
+        </div>
+        </div>
+      </div>
   `
 })
 
