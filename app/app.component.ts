@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Food } from './food.model';
 
 @Component({
   selector: 'app-root',
@@ -6,19 +7,10 @@ import { Component } from '@angular/core';
   <h1>Food Tracker</h1>
   <h3>{{month}}/{{day}}/{{year}}</h3>
 
-  <!--to view list-->
-  <li *ngFor="let food of foods" (click)='showFood(food)'>{{food.name}}
-  <button (click)='editFood(food)'>Edit</button>
-  </li>
+  <food-list [childFoodList]="masterFoodsList"></food-list>
 
-  <!-- to show details of food -->
-  <div *ngIf="showFoodDetails">
-  <p>Name: {{showFoodDetails.name}}</p>
-  <p>Details: {{showFoodDetails.details}}</p>
-  <p>Servings: {{showFoodDetails.servings}}</p>
-  <p>Calories: {{showFoodDetails.calories}}</p>
-  <button (click)="hideFoodDetails()">Done</button>
-  </div>
+
+  
 
   <!-- to edit current foods -->
     <div *ngIf="selectedFood">
@@ -45,7 +37,7 @@ export class AppComponent {
   year: number = this.currentTime.getFullYear();
 
 // food list
-foods: Food[] = [
+masterFoodsList: Food[] = [
   new Food('Bagel', 'plain', 1,	150),
   new Food('Kelloggs Raisin Bran', 'cereal', 3/4,	120),
   new Food('Oatmeal', 'cooked', 1,	132),
@@ -54,16 +46,6 @@ foods: Food[] = [
   new Food('Iced cinnamon roll', 'Pillsbury', 1, 110)
   ];
 
-// show details
-  showFoodDetails = null;
-
-  showFood(clickedFood) {
-    this.showFoodDetails = clickedFood;
-  }
-
-  hideFoodDetails() {
-    this.showFoodDetails = null;
-  }
 
 // edit foods
   selectedFood = null;
@@ -76,9 +58,4 @@ foods: Food[] = [
     this.selectedFood = null;
   }
 
-}
-
-
-export class Food {
-  constructor(public name: string, public details: string, public servings: number, public calories: number) {}
 }
