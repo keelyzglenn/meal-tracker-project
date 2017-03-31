@@ -7,7 +7,17 @@ import { Component } from '@angular/core';
   <h3>{{month}}/{{day}}/{{year}}</h3>
 
   <!--to view list-->
-  <li *ngFor="let food of foods">{{food.name}}</li>
+  <li *ngFor="let food of foods" (click)='showFood(food)'>{{food.name}}
+  </li>
+
+  <!-- to show details of food -->
+  <div *ngIf="showFoodDetails">
+  <p>Name: {{showFoodDetails.name}}</p>
+  <p>Details: {{showFoodDetails.details}}</p>
+  <p>Servings: {{showFoodDetails.servings}}</p>
+  <p>Calories: {{showFoodDetails.calories}}</p>
+  </div>
+
   `
 })
 
@@ -27,6 +37,19 @@ foods: Food[] = [
   new Food('Wheat Thins', 'gross', 8, 70),
   new Food('Iced cinnamon roll', 'Pillsbury', 1, 110)
   ];
+
+// showdetails
+  showFoodDetails = null;
+
+  showFood(clickedFood) {
+    this.showFoodDetails = clickedFood;
+  }
+
+  hideFoodDetails() {
+    this.showFoodDetails = null;
+  }
+
+
 }
 
 
