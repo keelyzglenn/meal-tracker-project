@@ -8,7 +8,10 @@ import { Food } from './food.model';
   <h3>{{month}}/{{day}}/{{year}}</h3>
 
   <food-list [childFoodList]="masterFoodsList" (clickSender)="editFood($event)"></food-list>
+
   <edit-food [childSelectedFood]="selectedFood" (hideEditFormClickedSender)="hideEditForm()"></edit-food>
+
+  <new-food (newFoodSender)="addFood($event)"></new-food>
 
 
 
@@ -42,6 +45,11 @@ masterFoodsList: Food[] = [
 
   hideEditForm() {
     this.selectedFood = null;
+  }
+
+  // add new food
+  addFood(newFoodFromChild: Food) {
+    this.masterFoodsList.push(newFoodFromChild);
   }
 
 }
