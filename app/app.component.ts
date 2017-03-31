@@ -4,7 +4,7 @@ import { Food } from './food.model';
 @Component({
   selector: 'app-root',
   template: `
-  <h1>Food Tracker</h1>
+
   <h3>{{month}}/{{day}}/{{year}}</h3>
 
   <food-list [childFoodList]="masterFoodsList" (clickSender)="editFood($event)"></food-list>

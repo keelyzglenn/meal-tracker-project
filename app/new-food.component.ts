@@ -5,8 +5,8 @@ import { Food } from './food.model';
   selector: 'new-food',
   template: `
   <div class="row new-foods">
-    <div class="col-md-4"></div>
-    <div ng-show="addFood" class="form-horizontal new-food-form col-md-4">
+    <div class="col-md-3"></div>
+    <div ng-show="addFood" class="form-horizontal new-food-form col-md-6">
     <div class="form-group ">
 
       <h3 id= "form-name">ADD YOUR LATEST SNACK</h3>

@@ -6,11 +6,11 @@ import { Food } from './food.model';
   template: `
   <!-- to edit current foods -->
     <div class="row edit-foods">
-      <div class="col-md-4"></div>
-      <div *ngIf="childSelectedFood" class="form-horizontal new-food-form col-md-4">
+      <div class="col-md-2"></div>
+      <div *ngIf="childSelectedFood" class="form-horizontal col-md-8">
       <div class="form-group ">
 
-        <h3 class= "form-name">EDIT THIS SNACK</h3>
+        <h3 class= "edit-form-name">EDIT THIS SNACK</h3>
       </div>
         <div class="form-group">
         <label class="col-md-4 control-label">Name</label>
