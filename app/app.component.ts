@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 
   <!--to view list-->
   <li *ngFor="let food of foods" (click)='showFood(food)'>{{food.name}}
+  <button (click)='editFood(food)'>Edit</button>
   </li>
 
   <!-- to show details of food -->
@@ -16,7 +17,22 @@ import { Component } from '@angular/core';
   <p>Details: {{showFoodDetails.details}}</p>
   <p>Servings: {{showFoodDetails.servings}}</p>
   <p>Calories: {{showFoodDetails.calories}}</p>
+  <button (click)="hideFoodDetails()">Done</button>
   </div>
+
+  <!-- to edit current foods -->
+    <div *ngIf="selectedFood">
+      <h3>Edit Food</h3>
+      <label>Name:</label>
+      <input [(ngModel)]="selectedFood.name">
+      <label>Details::</label>
+      <input [(ngModel)]="selectedFood.details">
+      <label>Servings:</label>
+      <input [(ngModel)]="selectedFood.servings">
+      <label>Calories:</label>
+      <input [(ngModel)]="selectedFood.calories">
+       <button (click)="hideEditForm()">Done</button>
+    </div>
 
   `
 })
@@ -38,7 +54,7 @@ foods: Food[] = [
   new Food('Iced cinnamon roll', 'Pillsbury', 1, 110)
   ];
 
-// showdetails
+// show details
   showFoodDetails = null;
 
   showFood(clickedFood) {
@@ -49,6 +65,16 @@ foods: Food[] = [
     this.showFoodDetails = null;
   }
 
+// edit foods
+  selectedFood = null;
+
+  editFood(clickedFood) {
+    this.selectedFood = clickedFood;
+  }
+
+  hideEditForm() {
+    this.selectedFood = null;
+  }
 
 }
 
